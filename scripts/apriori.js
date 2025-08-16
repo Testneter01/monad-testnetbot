@@ -38,7 +38,7 @@ function getRandomAmount() {
 
 function getRandomDelay() {
   const minDelay = 1 * 60 * 1000;
-  const maxDelay = 3 * 60 * 1000;
+  const maxDelay = 2 * 60 * 1000;
   return Math.floor(Math.random() * (maxDelay - minDelay + 1) + minDelay);
 }
 
@@ -216,10 +216,10 @@ async function runCycle(cycleNumber) {
     await requestUnstakeAprMON(stakeAmount, cycleNumber);
 
     console.log(
-      `Waiting for 660 seconds (11 minutes) before checking claim status...`
+      `Waiting for 300 seconds (5 minutes) before checking claim status...`
         .magenta
     );
-    await delay(660000);
+    await delay(300000);
 
     await claimMON(cycleNumber);
 
